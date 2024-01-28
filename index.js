@@ -10,11 +10,14 @@ app.use(fileUpload());
 const dbConnect = require("./config/database");
 dbConnect();
 const cloudinary = require("./config/cloudinary");
-cloudinary.cloudinaryConnect();
+cloudinary.cloudinaryConnect;
 
 const Upload = require("./routes/fileupload");
 app.use("/api/v1/upload",Upload);
 
 app.listen(PORT,()=>{
     console.log("running");
+})
+app.get("/",(req,res)=>{
+    res.send("<h1>HELLO!!!</h1>");
 })
